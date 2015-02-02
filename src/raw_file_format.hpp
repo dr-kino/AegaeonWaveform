@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <iterator>
 #include "output_file.hpp"
 #include "aegaeon_types.hpp"
 
