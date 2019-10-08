@@ -6,16 +6,27 @@ Arbitrary waveform generator, written in C++ and Octave language, for any functi
 ## Waveform Data Example
 
 08 00 00 00 - Number of samples.
+
 01 - Always 0x01.
+
 00 - Always 0x00.
+
 01 - Output mode.
+
 30 30 30 30 2E 52 41 46 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 - File name.
+
 00 00 40 E5 9C 30 12 00 - Period or sample.
+
 40 78 7D 01 - High level value.
+
 C0 87 82 FE - Low level value.
+
 4D B4 - CRC value of the waveform data.
+
 B6 B9 - CRC value of the header.
+
 00 00 00 00 - Always 0x00.
+
 FF BF DA B6 B6 AD 91 A4 6D 9B 48 92 24 89 00 80 - Data samples, 2 bytes each sample (0x0000 to 0x3FFF or 0x8000 to 0xBFFF).
 
 # Build Options
