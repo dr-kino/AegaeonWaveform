@@ -32,3 +32,8 @@ FF BF DA B6 B6 AD 91 A4 6D 9B 48 92 24 89 00 80 - Data samples, 2 bytes each sam
 # Build Options
 
 g++ -lboost_program_options aegaeon.cpp -o aegaeon
+
+# Waveform Examples
+
+## Ramp
+![Aegaeon-Waveform-01](https://user-images.githubusercontent.com/27175864/66438563-f57f6580-ea24-11e9-92d7-fe995c7062fa.png)
