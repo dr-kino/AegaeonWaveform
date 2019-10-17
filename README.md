@@ -27,7 +27,19 @@ Bytes 51~52 : [B6 B9] - CRC value of the header.
 
 Bytes 53~56 : [00 00 00 00] - Always 0x00.
 
-Bytes 57~72 : [FF BF DA B6 B6 AD 91 A4 6D 9B 48 92 24 89 00 80] - Data samples, 2 bytes each sample (0x0000 to 0x3FFF or 0x8000 to 0xBFFF).
+Bytes 57~72 : [FF BF DA B6 B6 AD 91 A4 6D 9B 48 92 24 89 00 80] - Data samples, 2 bytes each sample (Range: 0x0000 to 0x3FFF or 0x8000 to 0xBFFF).
+
+## Reverting The Checksum
+
+To revert the checksum founded in raw file, was used a tool called RevEng (http://reveng.sourceforge.net/). The two command lines below retrieve the check sum present in raw file, bytes 49~50 and 51~52. Notice that retrieved data is swapped.
+
+### Wave Form CRC Command
+
+./reveng -w 16 -p 1021 -i ebcc -c ffbfdab6b6ad91a46d9b489224890080
+
+### Header CRC Command
+
+./reveng -w 16 -p 1021 -i ebcc -c 08000000010001303030302e52414600000000000000000000000000000000000040e59c3012000040787d01c08782fe4db4
 
 # Build Options
 
