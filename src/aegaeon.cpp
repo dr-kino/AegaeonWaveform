@@ -1,3 +1,14 @@
+/**
+ * @file aegaeon.cpp
+ *
+ * @brief Main module, responsible to handle information exchange with user
+ *
+ * @ingroup Aegaeon
+ *
+ * @author Rafael Cavalcanti
+ * Contact: doctorkinoo@gmail.com
+ *
+ */
 #include <boost/program_options.hpp>
 namespace po = boost::program_options;
 
