@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Algorithm>
+    <Crc16-ccitt-false name="CRC16-CCITT-FALSE">
+        <Target brand="Rigol" model="DG" series="1000Z">
+            <Param width="16" polynomial="1021" ivalue="0xEBCC" and_output="0xFFFF">
+                "Settings for Rigol DG-1000Z Series."
+            </Param>
+        </Target>
+        <Target brand="Rigol" model="DG" series="1000">
+            <Param width="16" polynomial="1021" ivalue="0xEBCC" and_output="0xFFFF">
+                "Settings for Rigol DG-1000 Series."
+            </Param>
+        </Target>
+        <Target brand="Rigol" model="DG" series="4000">
+            <Param width="16" polynomial="1021" ivalue="0xEBCC" and_output="0xFFFF">
+                "Settings for Rigol DG-4000 Series."
+            </Param>
+        </Target>
+        <Target brand="Rigol" model="DG" series="5000">
+            <Param width="16" polynomial="1021" ivalue="0xEBCC" and_output="0xFFFF">
+                "Settings for Rigol DG-5000 Series."
+            </Param>
+        </Target>
+    </Crc16-ccitt-false>
+</CrcAlgorithm>

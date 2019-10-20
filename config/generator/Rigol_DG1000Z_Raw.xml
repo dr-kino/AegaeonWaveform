@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RigolDG1000Z>
+    <Target model="DG-1022Z">
+        <Format>
+            <Points datatype="variable" length="4" type="int32" minvalue="2" maxvalue="2000000">
+                "Number of samples."
+            </Points>
+            <Fixed1 datatype="fixed" length="1" type="none" value="1">
+                "Always 0x01."
+            </Fixed1>
+            <Fixed2 datatype="fixed" length="1" type="none" value="0">
+                "Always 0x00."
+            </Fixed2>
+            <OutputMode datatype="variable" length="1" type="bool" minvalue="1" maxvalue="1">
+                "Output mode."
+            </OutputMode>
+            <FileName datatype="variable" length="25" type="char">
+                "File name."
+            </FileName>
+            <SampleOrPeriod datatype="variable" length="8" type="int64">
+                "Period or sample."
+            </SampleOrPeriod>
+            <HighLevel datatype="variable" length="4" type="int32">
+                "High level value."
+            </HighLevel>
+            <LowLevel datatype="variable" length="4" type="int32">
+                "Low level value."
+            </LowLevel>
+            <WaveformCRC datatype="variable" length="2" type="uint16">
+                "CRC value of the waveform data."
+            </WaveformCRC>
+            <HeaderCRC datatype="variable" length="2" type="uint16">
+                "CRC value of the header."
+            </HeaderCRC>
+            <Fixed3 datatype="fixed" length="1" type="none" value="0">
+                "Always 0x00."
+            </Fixed3>
+            <Fixed4 datatype="fixed" length="1" type="none" value="0">
+                "Always 0x00."
+            </Fixed4>
+            <Fixed5 datatype="fixed" length="1" type="none" value="0">
+                "Always 0x00."
+            </Fixed5>
+            <Fixed6 datatype="fixed" length="1" type="none" value="0">
+                "Always 0x00."
+            </Fixed6>
+            <Data datatype="variable" length="1999944" type="uint16" minvalue="0" maxvalue="16383">
+                "Data samples, 2 bytes each sample (Range: 0x0000 to 0x3FFF or 0x8000 to 0xBFFF)."
+            </Data>
+        </Format>
+        <Algorithm name="CRC16-CCITT-FALSE" brand="Rigol" model="DG" series="1000Z">
+            "Algorithm CRC16 CCITT False for DG-1022Z Waveform Generator."
+        </Algorithm>
+    </Target>
+</RigolDG1000Z>

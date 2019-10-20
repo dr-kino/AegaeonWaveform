@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Targets>
+    <Target brand="Rigol" series="DG1000Z" model="DG-1022Z">
+        <Settings raw_format="yes" csv_format="yes" txt_format="yes">
+            "Settings for DG-1022Z"
+        </Settings>
+    </Target>
+</Targets>
