@@ -49,3 +49,5 @@ g++ -lboost_program_options aegaeon.cpp -o aegaeon
 
 ## Ramp
 ![Aegaeon-Waveform-01](https://user-images.githubusercontent.com/27175864/66438563-f57f6580-ea24-11e9-92d7-fe995c7062fa.png)
+
+## Sinc
