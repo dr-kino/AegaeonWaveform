@@ -3,7 +3,7 @@
 #define OUTPUT_FILE_FACTORY_HPP
 
 #include <memory>
-#include <output_file.h>
+#include <output_file.hpp>
 
 /**
  * \class OutputFileFactory

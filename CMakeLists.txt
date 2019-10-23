@@ -17,7 +17,17 @@ set(CMAKE_CXX_STANDARD 14)
 find_package(Boost REQUIRED COMPONENTS program_options)
 include_directories(${Boost_INCLUDE_DIR})
 
-add_executable(Aegaeon src/aegaeon.cpp)
+add_executable(Aegaeon 
+                src/aegaeon.cpp
+                src/output_file_factory.cpp
+                src/csv_file_format.cpp
+                src/raw_file_format.cpp
+                src/txt_file_format.cpp
+)
+
+include_directories(
+                src/
+)
 
 # link Boost libraries to the new target
 target_link_libraries(Aegaeon ${Boost_LIBRARIES})
