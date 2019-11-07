@@ -1,8 +1,9 @@
-
 #ifndef OUTPUT_FILE_FACTORY_HPP
 #define OUTPUT_FILE_FACTORY_HPP
 
 #include <memory>
+#include <vector>
+#include <string>
 #include <output_file.hpp>
 
 /**
@@ -33,22 +34,16 @@
  * $Id: doxygen-howto.html,v 1.0 2019/10/20 18:16:20 dr-kino Exp $
  *
  */
-class OutputFileFactory
-{
+class OutputFileFactory {
 public:
-    /* Enumerator */
-    enum FILE_TYPE {CSV_TYPE, RAW_TYPE, TXT_TYPE};
+	// enum
+	enum FILE_TYPE {CSV_TYPE, RAW_TYPE, TXT_TYPE};
 
-    OutputFileFactory();
-    virtual ~OutputFileFactory();
-    
-    static std::unique_ptr<FormatFile> createFile(FILE_TYPE fileType);
+	OutputFileFactory();
+	virtual ~OutputFileFactory();
+
+	static std::unique_ptr<FormatFile> createFile(FILE_TYPE fileType);
 
 };
-/* Constructor */
-OutputFileFactory::OutputFileFactory(){ }
-
-/* Destructor */
-OutputFileFactory::~OutputFileFactory(){ }
 
 #endif // OUTPUT_FILE_FACTORY_HPP
