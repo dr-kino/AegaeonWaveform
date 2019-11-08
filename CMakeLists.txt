@@ -12,7 +12,7 @@ cmake_minimum_required (VERSION 3.7)
 
 project(Aegaeon)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 find_package(Boost REQUIRED COMPONENTS program_options)
 include_directories(${Boost_INCLUDE_DIR})
@@ -20,9 +20,13 @@ include_directories(${Boost_INCLUDE_DIR})
 add_executable(Aegaeon 
                 src/aegaeon.cpp
                 src/output_file_factory.cpp
+                src/output_file_factory.hpp
                 src/csv_file_format.cpp
+                src/csv_file_format.hpp
                 src/raw_file_format.cpp
+                src/raw_file_format.hpp
                 src/txt_file_format.cpp
+                src/txt_file_format.hpp
 )
 
 include_directories(

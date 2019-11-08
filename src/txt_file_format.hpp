@@ -13,7 +13,7 @@ public:
     void setFileName(std::string fileNameNew);
 
     const std::vector<uint8_t> getData() const;
-    void getData(std::vector<uint8_t> dataNew);
+    void setData(std::vector<uint8_t> dataNew);
 };
 
 #endif // TXT_FILE_FORMAT_HPP

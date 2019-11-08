@@ -2,6 +2,8 @@
 #define CSV_FILE_FORMAT_HPP
 
 #include "output_file.hpp"
+#include <vector>
+#include <string>
 
 class CsvFileFormat : public FormatFile {
 public:
@@ -13,7 +15,7 @@ public:
     void setFileName(std::string fileNameNew);
 
     const std::vector<uint8_t> getData() const;
-    void getData(std::vector<uint8_t> dataNew);
+    void setData(std::vector<uint8_t> dataNew);
 };
 
 #endif // CSV_FILE_FORMAT_HPP
