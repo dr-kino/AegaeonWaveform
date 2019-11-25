@@ -41,6 +41,8 @@ To revert the checksum founded in raw file, was used a tool called RevEng (http:
 
 ./reveng -w 16 -p 1021 -i ebcc -c 08000000010001303030302e52414600000000000000000000000000000000000040e59c3012000040787d01c08782fe4db4
 
+# Dependencies
+
 # Build Options
 
 g++ -lboost_program_options aegaeon.cpp -o aegaeon
