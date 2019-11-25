@@ -13,28 +13,28 @@ RawFileFormat::~RawFileFormat() {
 }
 
 // ----------------------------------------------------------------------------
-// setSize
+// setFileName
 // ----------------------------------------------------------------------------
 void RawFileFormat::setFileName(std::string fileNameNew) {
 	_fileName = fileNameNew;
 }
 	
 // ----------------------------------------------------------------------------
-// getSize
+// getFileName
 // ----------------------------------------------------------------------------
 const std::string RawFileFormat::getFileName() const {
 	return _fileName;
 }
 
 // ----------------------------------------------------------------------------
-// setSpeed
+// setData
 // ----------------------------------------------------------------------------
 void RawFileFormat::setData(std::vector<uint8_t> dataNew) {
 	_data = dataNew;
 }
 	
 // ----------------------------------------------------------------------------
-// getSpeed
+// getName
 // ----------------------------------------------------------------------------
 const std::vector<uint8_t> RawFileFormat::getData() const	{
 	return _data;
