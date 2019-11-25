@@ -26,6 +26,6 @@ std::unique_ptr<FormatFile> OutputFileFactory::createFile(FILE_TYPE fileType) {
 		case CSV_TYPE:  return std::make_unique<CsvFileFormat>();
 		case RAW_TYPE: 	return std::make_unique<RawFileFormat>();
 		case TXT_TYPE:  return std::make_unique<TxtFileFormat>();
-		default:			      return std::make_unique<RawFileFormat>();
+		default:		return std::make_unique<RawFileFormat>();
 	}
 }
