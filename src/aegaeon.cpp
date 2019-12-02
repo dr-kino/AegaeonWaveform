@@ -24,6 +24,7 @@ int main(int ac, char* av[])
         desc.add_options()
             ("help", "produce help message")
             ("compression", po::value<double>(), "set compression level")
+            ("filein", po::value<string>(), "file name")
         ;
 
         po::variables_map vm;        
@@ -40,6 +41,13 @@ int main(int ac, char* av[])
                  << vm["compression"].as<double>() << ".\n";
         } else {
             cout << "Compression level was not set.\n";
+        }
+
+        if (vm.count("filein")) {
+            cout << "Input file: "
+                 << vm["filein"].as<string>() << "\n";
+        } else {
+            cout << "No input file\n";
         }
     }
     catch(exception& e) {
