@@ -18,13 +18,15 @@ using namespace std;
 
 int main(int ac, char* av[])
 {
+    bool isThereAllArgs = true;
     try {
 
         po::options_description desc("Allowed options");
         desc.add_options()
-            ("help", "produce help message")
-            ("compression", po::value<double>(), "set compression level")
-            ("filein", po::value<string>(), "file name")
+        ("help", "produce help message")
+        ("type", po::value<string>(), "set output type format")
+        ("waveform", po::value<string>(), "file name for input waveform")
+        ("fileout", po::value<string>(), "file name for function generator")
         ;
 
         po::variables_map vm;        
@@ -36,19 +38,41 @@ int main(int ac, char* av[])
             return 0;
         }
 
-        if (vm.count("compression")) {
-            cout << "Compression level was set to " 
-                 << vm["compression"].as<double>() << ".\n";
+        if (vm.count("type")) {
+            cout << "Type was set to " 
+                 << vm["type"].as<string>() << ".\n";
+            if((vm["type"].as<string>().compare("csv") != 0) && 
+               (vm["type"].as<string>().compare("txt") != 0) && 
+               (vm["type"].as<string>().compare("raw") != 0)) {
+                cout << "The output file format is not supported" << endl;
+                isThereAllArgs = false;    
+            }
         } else {
-            cout << "Compression level was not set.\n";
+            cout << "Type was not set.\n";
+            isThereAllArgs = false;
         }
 
-        if (vm.count("filein")) {
-            cout << "Input file: "
-                 << vm["filein"].as<string>() << "\n";
+        if (vm.count("waveform")) {
+            cout << "Waveform was set to " 
+                 << vm["waveform"].as<string>() << ".\n";
         } else {
-            cout << "No input file\n";
+            cout << "Waveform was not set.\n";
+            isThereAllArgs = false;
         }
+
+        if (vm.count("fileout")) {
+            cout << "Output file: "
+                 << vm["fileout"].as<string>() << "\n";
+        } else {
+            cout << "No outputfile file specified\n";
+            isThereAllArgs = false;
+        }
+
+        if (isThereAllArgs == true) {
+            cout << "Executing operation" << endl;
+
+        }
+
     }
     catch(exception& e) {
         cerr << "error: " << e.what() << "\n";
