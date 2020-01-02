@@ -17,6 +17,16 @@
 namespace po = boost::program_options;
 using namespace std;
 
+void setType();
+unsigned char getType();
+// Setteres and Getteres for private variable "Aegaeon.waveformName"
+void setWaveformName();
+std::string getWaveformName();
+// Setteres and Getteres for private variable "Aegaeon.outputFileName"
+void setOutputFileName();
+std::string getOutputFileName();
+
+
 int main(int ac, char* av[])
 {
     bool isThereAllArgs = true;
