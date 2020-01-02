@@ -2,6 +2,7 @@
 #define AEGAEON_HPP
 
 #include <string>
+#include <memory>
 
 enum outputFile {
     csv = 0,
@@ -18,6 +19,13 @@ typedef struct Aegaeon {
 } Aegaeon_t;
 
 class AegaeonUnit {
+    private:
+        static std::unique_ptr<AegaeonUnit> instance_;
+        AegaeonUnit();
+        AegaeonUnit(AegaeonUnit const&) = delete;
+        void operator=(AegaeonUnit const&) = delete;
+
+        Aegaeon_t Aegaeon_;
     public:
         // Setteres and Getteres for private variable "Aegaeon.type"
         void setType();
@@ -28,9 +36,6 @@ class AegaeonUnit {
         // Setteres and Getteres for private variable "Aegaeon.outputFileName"
         void setOutputFileName();
         std::string getOutputFileName();
-
-    private:
-        Aegaeon_t _Aegaeon;
 };
 
 #endif // AEGAEON_HPP
