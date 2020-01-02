@@ -1,11 +1,15 @@
-#define AEGAEON_HPP
 #ifndef AEGAEON_HPP
+#define AEGAEON_HPP
 
-typedef enum outputFile {
+#include <string>
+
+enum outputFile {
     csv = 0,
     txt,
-    raw,
-} outputFile_t;
+    raw
+};
+
+typedef enum outputFile outputFile_t;
 
 typedef struct Aegaeon {
     unsigned char type;

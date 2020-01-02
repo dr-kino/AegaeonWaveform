@@ -9,17 +9,19 @@
  * Contact: doctorkinoo@gmail.com
  *
  */
-#include "aegaeon.hpp"
+#include "aegaeon.hpp" 
 #include <boost/program_options.hpp>
-namespace po = boost::program_options;
-
 #include <iostream>
 #include <iterator>
+
+namespace po = boost::program_options;
 using namespace std;
 
 int main(int ac, char* av[])
 {
     bool isThereAllArgs = true;
+    outputFile_t outputFile;
+
     try {
 
         po::options_description desc("Allowed options");
@@ -41,12 +43,17 @@ int main(int ac, char* av[])
 
         if (vm.count("type")) {
             cout << "Type was set to " << vm["type"].as<string>() << ".\n";
-            if((vm["type"].as<string>().compare("csv") != 0) && 
-               (vm["type"].as<string>().compare("txt") != 0) && 
-               (vm["type"].as<string>().compare("raw") != 0)) {
+            if(vm["type"].as<string>().compare("csv") == 0) {
+                outputFile = csv;
+            } else if (vm["type"].as<string>().compare("txt") == 0) {
+                outputFile = txt;
+            } else if (vm["type"].as<string>().compare("raw") == 0) {
+                outputFile = raw;
+            } else {
                 cout << "The output file format is not supported" << endl;
-                isThereAllArgs = false;    
+                isThereAllArgs = false;
             }
+
         } else {
             cout << "Type was not set.\n";
             isThereAllArgs = false;

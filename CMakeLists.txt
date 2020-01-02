@@ -20,13 +20,9 @@ include_directories(${Boost_INCLUDE_DIR})
 add_executable(Aegaeon 
                 src/aegaeon.cpp
                 src/output_file_factory.cpp
-                src/output_file_factory.hpp
                 src/csv_file_format.cpp
-                src/csv_file_format.hpp
                 src/raw_file_format.cpp
-                src/raw_file_format.hpp
                 src/txt_file_format.cpp
-                src/txt_file_format.hpp
 )
 
 include_directories(
