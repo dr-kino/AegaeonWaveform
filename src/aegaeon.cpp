@@ -9,6 +9,7 @@
  * Contact: doctorkinoo@gmail.com
  *
  */
+#include "aegaeon.hpp"
 #include <boost/program_options.hpp>
 namespace po = boost::program_options;
 
