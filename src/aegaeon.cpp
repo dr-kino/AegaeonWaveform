@@ -39,8 +39,7 @@ int main(int ac, char* av[])
         }
 
         if (vm.count("type")) {
-            cout << "Type was set to " 
-                 << vm["type"].as<string>() << ".\n";
+            cout << "Type was set to " << vm["type"].as<string>() << ".\n";
             if((vm["type"].as<string>().compare("csv") != 0) && 
                (vm["type"].as<string>().compare("txt") != 0) && 
                (vm["type"].as<string>().compare("raw") != 0)) {
@@ -53,16 +52,18 @@ int main(int ac, char* av[])
         }
 
         if (vm.count("waveform")) {
-            cout << "Waveform was set to " 
-                 << vm["waveform"].as<string>() << ".\n";
+            cout << "Waveform was set to " << vm["waveform"].as<string>() << ".\n";
+            if (access(vm["waveform"].as<string>().c_str(), F_OK) == -1) {
+                cout << "Failure to open waveform file" << endl;
+                isThereAllArgs = false;
+            }
         } else {
             cout << "Waveform was not set.\n";
             isThereAllArgs = false;
         }
 
         if (vm.count("fileout")) {
-            cout << "Output file: "
-                 << vm["fileout"].as<string>() << "\n";
+            cout << "Output file: " << vm["fileout"].as<string>() << "\n";
         } else {
             cout << "No outputfile file specified\n";
             isThereAllArgs = false;
