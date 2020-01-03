@@ -25,6 +25,8 @@ add_executable(Aegaeon
                 src/csv_file_format.cpp
                 src/raw_file_format.cpp
                 src/txt_file_format.cpp
+                src/xml_parser.cpp
+                src/crc_16.cpp
 )
 
 include_directories(
