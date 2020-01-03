@@ -153,7 +153,7 @@ int main(int ac, char *av[])
         if ( isThereAllArgs == true )
             cout << "Executing operation..." << endl;
 
-        ParserSupportedTargets();
+        ParseSupportedTargets();
     }
     catch ( exception &e )
     {
