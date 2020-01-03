@@ -7,6 +7,6 @@
 #include <libxml/tree.h>
 #include <libxml/parser.h>
 
-void ParserSupportedFile(void)
+void ParserSupportedTargets(void)
 {
 }
