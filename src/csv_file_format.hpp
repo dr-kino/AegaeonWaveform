@@ -6,16 +6,15 @@
 #include <string>
 
 class CsvFileFormat : public FormatFile {
-public:
+    public:
 
-	CsvFileFormat();
-	virtual ~CsvFileFormat();
+    CsvFileFormat();
+    virtual ~CsvFileFormat();
 
     const std::string getFileName() const;
     void setFileName(std::string fileNameNew);
 
-    const std::vector<uint8_t> getData() const;
-    void setData(std::vector<uint8_t> dataNew);
+    const std::vector<uint8_t>getData() const;
+    void setData(std::vector<uint8_t>dataNew);
 };
-
 #endif // CSV_FILE_FORMAT_HPP

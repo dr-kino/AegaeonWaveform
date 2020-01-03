@@ -3,39 +3,45 @@
 /// ----------------------------------------------------------------------------
 // Constructor
 // ----------------------------------------------------------------------------
-RawFileFormat::RawFileFormat() {
+RawFileFormat::RawFileFormat()
+{
 }
 
 // ----------------------------------------------------------------------------
 // Destructor
 // ----------------------------------------------------------------------------
-RawFileFormat::~RawFileFormat() {
+RawFileFormat::~RawFileFormat()
+{
 }
 
 // ----------------------------------------------------------------------------
 // setFileName
 // ----------------------------------------------------------------------------
-void RawFileFormat::setFileName(std::string fileNameNew) {
-	_fileName = fileNameNew;
+void RawFileFormat::setFileName(std::string fileNameNew)
+{
+    _fileName = fileNameNew;
 }
-	
+
 // ----------------------------------------------------------------------------
 // getFileName
 // ----------------------------------------------------------------------------
-const std::string RawFileFormat::getFileName() const {
-	return _fileName;
+const std::string RawFileFormat::getFileName() const
+{
+    return _fileName;
 }
 
 // ----------------------------------------------------------------------------
 // setData
 // ----------------------------------------------------------------------------
-void RawFileFormat::setData(std::vector<uint8_t> dataNew) {
-	_data = dataNew;
+void RawFileFormat::setData(std::vector<uint8_t>dataNew)
+{
+    _data = dataNew;
 }
-	
+
 // ----------------------------------------------------------------------------
 // getName
 // ----------------------------------------------------------------------------
-const std::vector<uint8_t> RawFileFormat::getData() const	{
-	return _data;
+const std::vector<uint8_t>RawFileFormat::getData() const
+{
+    return _data;
 }

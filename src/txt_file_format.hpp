@@ -4,16 +4,15 @@
 #include "output_file.hpp"
 
 class TxtFileFormat : public FormatFile {
-public:
+    public:
 
-	TxtFileFormat();
-	virtual ~TxtFileFormat();
+    TxtFileFormat();
+    virtual ~TxtFileFormat();
 
     const std::string getFileName() const;
     void setFileName(std::string fileNameNew);
 
-    const std::vector<uint8_t> getData() const;
-    void setData(std::vector<uint8_t> dataNew);
+    const std::vector<uint8_t>getData() const;
+    void setData(std::vector<uint8_t>dataNew);
 };
-
 #endif // TXT_FILE_FORMAT_HPP

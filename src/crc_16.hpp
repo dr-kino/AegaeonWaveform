@@ -3,6 +3,5 @@
 
 #include <stdint.h>
 
-uint16_t crc16(char* pData, int length);
-
+uint16_t crc16(char *pData, int length);
 #endif // CRC_16_HPP

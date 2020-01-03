@@ -3,39 +3,45 @@
 // ----------------------------------------------------------------------------
 // CTOR
 // ----------------------------------------------------------------------------
-TxtFileFormat::TxtFileFormat() {
+TxtFileFormat::TxtFileFormat()
+{
 }
 
 // ----------------------------------------------------------------------------
 // DTOR
 // ----------------------------------------------------------------------------
-TxtFileFormat::~TxtFileFormat() {
+TxtFileFormat::~TxtFileFormat()
+{
 }
 
 // ----------------------------------------------------------------------------
 // setFileName
 // ----------------------------------------------------------------------------
-void TxtFileFormat::setFileName(std::string fileNameNew) {
+void TxtFileFormat::setFileName(std::string fileNameNew)
+{
     _fileName = fileNameNew;
 }
-	
+
 // ----------------------------------------------------------------------------
 // getFileName
 // ----------------------------------------------------------------------------
-const std::string TxtFileFormat::getFileName() const {
-    return _fileName; 
+const std::string TxtFileFormat::getFileName() const
+{
+    return _fileName;
 }
 
 // ----------------------------------------------------------------------------
 // setData
 // ----------------------------------------------------------------------------
-void TxtFileFormat::setData(std::vector<uint8_t> dataNew) {
+void TxtFileFormat::setData(std::vector<uint8_t>dataNew)
+{
     _data = dataNew;
 }
-	
+
 // ----------------------------------------------------------------------------
 // getData
 // ----------------------------------------------------------------------------
-const std::vector<uint8_t> TxtFileFormat::getData() const {
+const std::vector<uint8_t>TxtFileFormat::getData() const
+{
     return _data;
 }

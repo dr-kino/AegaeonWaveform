@@ -17,7 +17,7 @@
  * This class is meant as an example.  It is not useful by itself
  * rather its usefulness is only a function of how much it helps
  * the reader.  It is in a sense defined by the person who reads it
- * and otherwise does not exist in any real form. 
+ * and otherwise does not exist in any real form.
  *
  * \note Attempts at zen rarely work.
  *
@@ -35,15 +35,18 @@
  *
  */
 class OutputFileFactory {
-public:
-	// enum
-	enum FILE_TYPE {CSV_TYPE, RAW_TYPE, TXT_TYPE};
+    public:
+    // enum
+    enum FILE_TYPE
+    {
+        CSV_TYPE,
+        RAW_TYPE,
+        TXT_TYPE
+    };
 
-	OutputFileFactory();
-	virtual ~OutputFileFactory();
+    OutputFileFactory();
+    virtual ~OutputFileFactory();
 
-	static std::unique_ptr<FormatFile> createFile(FILE_TYPE fileType);
-
+    static std::unique_ptr<FormatFile>createFile(FILE_TYPE fileType);
 };
-
 #endif // OUTPUT_FILE_FACTORY_HPP
