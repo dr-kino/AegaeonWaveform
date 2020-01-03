@@ -11,6 +11,7 @@
  */
 #include "aegaeon.hpp"
 #include "generator.hpp"
+#include "xml_parser.hpp"
 #include <boost/program_options.hpp>
 #include <iostream>
 #include <iterator>
@@ -151,7 +152,8 @@ int main(int ac, char *av[])
 
         if ( isThereAllArgs == true )
             cout << "Executing operation..." << endl;
-            // AegaeonGenerator.getSupportedGenerators();
+
+        ParserSupportedTargets();
     }
     catch ( exception &e )
     {
