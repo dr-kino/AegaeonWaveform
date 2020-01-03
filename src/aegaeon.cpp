@@ -39,24 +39,24 @@ AegaeonUnit& AegaeonUnit::getInstance(void)
 }
 // Setteres and Getteres for private variable "Aegaeon.type"
 void AegaeonUnit::setType(unsigned char type) {
-
+    Aegaeon_.type = type;
 }
 unsigned char AegaeonUnit::getType(void) {
-
+    return Aegaeon_.type;
 }
 // Setteres and Getteres for private variable "Aegaeon.waveformName"
 void AegaeonUnit::setWaveformName(std::string waveformName) {
-
+    Aegaeon_.waveformName = waveformName;
 }
 std::string AegaeonUnit::getWaveformName(void) {
-
+    return Aegaeon_.waveformName;
 }
 // Setteres and Getteres for private variable "Aegaeon.outputFileName"
 void AegaeonUnit::setOutputFileName(std::string outputFileName) {
-
+    Aegaeon_.outputFileName = outputFileName;
 }
 std::string AegaeonUnit::getOutputFileName(void) {
-
+    return Aegaeon_.outputFileName;
 }
 
 int main(int ac, char* av[])
