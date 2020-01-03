@@ -87,12 +87,19 @@ int main(int ac, char *av[])
         po::store(po::parse_command_line(ac, av, desc), vm);
         po::notify(vm);
 
-        if ( vm.count("help"))
+        if ( vm.count("help") )
         {
             cout << desc << "\n";
             return 0;
         }
 
+        if ( vm.count("list"))
+        {
+            AegaeonGenerator.showSupportedGenerators();
+            return 0;
+        }
+
+        /* Handler for type option */
         if ( vm.count("type"))
         {
             // cout << "Type was set to " << vm["type"].as<string>() << ".\n";
@@ -120,6 +127,7 @@ int main(int ac, char *av[])
             isThereAllArgs = false;
         }
 
+        /* Handler for waveform option */
         if ( vm.count("waveform"))
         {
             // cout << "Waveform was set to " << vm["waveform"].as<string>() << ".\n";
@@ -139,6 +147,7 @@ int main(int ac, char *av[])
             isThereAllArgs = false;
         }
 
+        /* Handler for fileout option */
         if ( vm.count("fileout"))
         {
             // cout << "Output file: " << vm["fileout"].as<string>() << "\n";
@@ -150,10 +159,21 @@ int main(int ac, char *av[])
             isThereAllArgs = false;
         }
 
+        /* Handler for generator option */
+        if ( vm.count("generator"))
+        {
+            AegaeonGenerator.compareSupportedGenerators(vm["generator"].as<string>());
+        }
+        else
+        {
+            cout << "No generator model specified\n";
+            isThereAllArgs = false;
+        }
+
+        /* Command execution */
         if ( isThereAllArgs == true )
             cout << "Executing operation..." << endl;
 
-        ParseSupportedTargets();
     }
     catch ( exception &e )
     {

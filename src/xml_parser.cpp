@@ -1,13 +1,24 @@
 #include "xml_parser.hpp"
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include <string>
+#include <iostream>
 #include <libxml/HTMLparser.h>
 #include <libxml/xmlmemory.h>
 #include <libxml/tree.h>
 #include <libxml/parser.h>
 
 #include <libxml/xmlreader.h>
+
+using namespace std;
+
+bool FindAttribute(std::string attribute)
+{
+    bool isThereAttribute = true;
+
+    cout << "Verifying attribute " << attribute << endl;
+
+    return isThereAttribute;
+}
 
 void ParseTargetModelAttribute(xmlNode *a_node, int *calls)
 {

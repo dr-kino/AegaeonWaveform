@@ -1,6 +1,16 @@
+#include <iostream>
 #include "generator.hpp"
+#include "xml_parser.hpp"
 
-void Generator::getSupportedGenerators(std::string *list, size_t listSize)
+using namespace std;
+
+void Generator::showSupportedGenerators(void)
 {
-    const char *filename = "../config/SupportedTargets.xml";
+    ParseSupportedTargets();
+}
+
+void Generator::compareSupportedGenerators(std::string generator)
+{
+    if ( FindAttribute(generator) == false )
+        cout << "Generator not supported" << endl;
 }
