@@ -13,29 +13,49 @@
 #include <boost/program_options.hpp>
 #include <iostream>
 #include <iterator>
+#include <memory>
 
 namespace po = boost::program_options;
 using namespace std;
 
-// Setteres and Getteres for private variable "Aegaeon.type"
-void AegaeonUnit::setType() {
+std::unique_ptr<AegaeonUnit> AegaeonUnit::instance_;
+
+// Constructor
+AegaeonUnit::AegaeonUnit() {
 
 }
-unsigned char AegaeonUnit::getType() {
+// Destructor
+AegaeonUnit::~AegaeonUnit() {
+
+}
+// Singleton Method
+AegaeonUnit& AegaeonUnit::getInstance(void)
+{
+    if(nullptr == instance_)
+    {
+        instance_.reset(new AegaeonUnit());
+    }
+    return *(instance_.get());
+}
+// Setteres and Getteres for private variable "Aegaeon.type"
+void AegaeonUnit::setType(unsigned char type) {
+
+}
+unsigned char AegaeonUnit::getType(void) {
 
 }
 // Setteres and Getteres for private variable "Aegaeon.waveformName"
-void AegaeonUnit::setWaveformName() {
+void AegaeonUnit::setWaveformName(std::string waveformName) {
 
 }
-std::string AegaeonUnit::getWaveformName() {
+std::string AegaeonUnit::getWaveformName(void) {
 
 }
 // Setteres and Getteres for private variable "Aegaeon.outputFileName"
-void AegaeonUnit::setOutputFileName() {
+void AegaeonUnit::setOutputFileName(std::string outputFileName) {
 
 }
-std::string AegaeonUnit::getOutputFileName() {
+std::string AegaeonUnit::getOutputFileName(void) {
 
 }
 
