@@ -11,6 +11,6 @@ class Generator {
 
     public:
     void showSupportedGenerators(void);
-    void compareSupportedGenerators(std::string generator);
+    bool compareSupportedGenerators(std::string generator);
 };
 #endif // GENERATOR_HPP

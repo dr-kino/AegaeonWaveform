@@ -162,7 +162,7 @@ int main(int ac, char *av[])
         /* Handler for generator option */
         if ( vm.count("generator"))
         {
-            AegaeonGenerator.compareSupportedGenerators(vm["generator"].as<string>());
+            isThereAllArgs = AegaeonGenerator.compareSupportedGenerators(vm["generator"].as<string>());
         }
         else
         {
@@ -173,7 +173,6 @@ int main(int ac, char *av[])
         /* Command execution */
         if ( isThereAllArgs == true )
             cout << "Executing operation..." << endl;
-
     }
     catch ( exception &e )
     {

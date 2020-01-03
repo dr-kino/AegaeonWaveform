@@ -9,8 +9,15 @@ void Generator::showSupportedGenerators(void)
     ParseSupportedTargets();
 }
 
-void Generator::compareSupportedGenerators(std::string generator)
+bool Generator::compareSupportedGenerators(std::string generator)
 {
+    bool generatorIsSupported = true;
+
     if ( FindAttribute(generator) == false )
+    {
         cout << "Generator not supported" << endl;
+        generatorIsSupported = false;
+    }
+
+    return generatorIsSupported;
 }
