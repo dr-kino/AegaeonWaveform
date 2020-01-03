@@ -17,15 +17,27 @@
 namespace po = boost::program_options;
 using namespace std;
 
-void setType();
-unsigned char getType();
-// Setteres and Getteres for private variable "Aegaeon.waveformName"
-void setWaveformName();
-std::string getWaveformName();
-// Setteres and Getteres for private variable "Aegaeon.outputFileName"
-void setOutputFileName();
-std::string getOutputFileName();
+// Setteres and Getteres for private variable "Aegaeon.type"
+void AegaeonUnit::setType() {
 
+}
+unsigned char AegaeonUnit::getType() {
+
+}
+// Setteres and Getteres for private variable "Aegaeon.waveformName"
+void AegaeonUnit::setWaveformName() {
+
+}
+std::string AegaeonUnit::getWaveformName() {
+
+}
+// Setteres and Getteres for private variable "Aegaeon.outputFileName"
+void AegaeonUnit::setOutputFileName() {
+
+}
+std::string AegaeonUnit::getOutputFileName() {
+
+}
 
 int main(int ac, char* av[])
 {
