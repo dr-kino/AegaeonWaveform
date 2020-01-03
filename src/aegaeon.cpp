@@ -71,6 +71,8 @@ int main(int ac, char* av[])
         ("type", po::value<string>(), "set output type format")
         ("waveform", po::value<string>(), "file name for input waveform")
         ("fileout", po::value<string>(), "file name for function generator")
+        ("generator", po::value<string>(), "set generator model")
+        ("list", "list all supported function generator")
         ;
 
         po::variables_map vm;        

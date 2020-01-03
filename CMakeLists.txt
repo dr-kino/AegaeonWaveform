@@ -19,6 +19,7 @@ include_directories(${Boost_INCLUDE_DIR})
 
 add_executable(Aegaeon 
                 src/aegaeon.cpp
+                src/generator.cpp
                 src/output_file_factory.cpp
                 src/csv_file_format.cpp
                 src/raw_file_format.cpp
