@@ -62,7 +62,6 @@ std::string AegaeonUnit::getOutputFileName(void) {
 int main(int ac, char* av[])
 {
     bool isThereAllArgs = true;
-    outputFile_t outputFile;
 
     try {
 
@@ -84,13 +83,13 @@ int main(int ac, char* av[])
         }
 
         if (vm.count("type")) {
-            cout << "Type was set to " << vm["type"].as<string>() << ".\n";
+            //cout << "Type was set to " << vm["type"].as<string>() << ".\n";
             if(vm["type"].as<string>().compare("csv") == 0) {
-                outputFile = csv;
+                AegaeonUnit::getInstance().setType(csv);
             } else if (vm["type"].as<string>().compare("txt") == 0) {
-                outputFile = txt;
+                AegaeonUnit::getInstance().setType(txt);
             } else if (vm["type"].as<string>().compare("raw") == 0) {
-                outputFile = raw;
+                AegaeonUnit::getInstance().setType(raw);
             } else {
                 cout << "The output file format is not supported" << endl;
                 isThereAllArgs = false;
@@ -102,10 +101,12 @@ int main(int ac, char* av[])
         }
 
         if (vm.count("waveform")) {
-            cout << "Waveform was set to " << vm["waveform"].as<string>() << ".\n";
+            //cout << "Waveform was set to " << vm["waveform"].as<string>() << ".\n";
             if (access(vm["waveform"].as<string>().c_str(), F_OK) == -1) {
                 cout << "Failure to open waveform file" << endl;
                 isThereAllArgs = false;
+            } else {
+                AegaeonUnit::getInstance().setWaveformName(vm["waveform"].as<string>());
             }
         } else {
             cout << "Waveform was not set.\n";
@@ -113,14 +114,15 @@ int main(int ac, char* av[])
         }
 
         if (vm.count("fileout")) {
-            cout << "Output file: " << vm["fileout"].as<string>() << "\n";
+            // cout << "Output file: " << vm["fileout"].as<string>() << "\n";
+            AegaeonUnit::getInstance().setOutputFileName(vm["fileout"].as<string>());
         } else {
             cout << "No outputfile file specified\n";
             isThereAllArgs = false;
         }
 
         if (isThereAllArgs == true) {
-            cout << "Executing operation" << endl;
+            cout << "Executing operation..." << endl;
 
         }
 
