@@ -14,8 +14,9 @@ project(Aegaeon)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
+find_package(LibXml2 REQUIRED)
 find_package(Boost REQUIRED COMPONENTS program_options)
-include_directories(${Boost_INCLUDE_DIR})
+include_directories(${Boost_INCLUDE_DIR} ${LIBXML2_INCLUDE_DIR})
 
 add_executable(Aegaeon 
                 src/aegaeon.cpp
@@ -31,4 +32,4 @@ include_directories(
 )
 
 # link Boost libraries to the new target
-target_link_libraries(Aegaeon ${Boost_LIBRARIES})
+target_link_libraries(Aegaeon ${Boost_LIBRARIES} ${LIBXML2_LIBRARIES})

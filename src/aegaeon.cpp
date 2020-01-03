@@ -10,6 +10,7 @@
  *
  */
 #include "aegaeon.hpp"
+#include "generator.hpp"
 #include <boost/program_options.hpp>
 #include <iostream>
 #include <iterator>
@@ -67,6 +68,7 @@ std::string AegaeonUnit::getOutputFileName(void)
 int main(int ac, char *av[])
 {
     bool isThereAllArgs = true;
+    Generator AegaeonGenerator;
 
     try
     {
@@ -149,6 +151,7 @@ int main(int ac, char *av[])
 
         if ( isThereAllArgs == true )
             cout << "Executing operation..." << endl;
+            // AegaeonGenerator.getSupportedGenerators();
     }
     catch ( exception &e )
     {
