@@ -173,6 +173,10 @@ int main(int ac, char *av[])
         /* Command execution */
         if ( isThereAllArgs == true )
             cout << "Executing operation..." << endl;
+            /* Verify if the target suppots the output file format */
+
+            /* Executes the command */
+
     }
     catch ( exception &e )
     {
