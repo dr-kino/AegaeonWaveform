@@ -33,7 +33,7 @@ typedef struct FormatRigolSeries1000z {
     const char Fixed4 = 0x00;
     const char Fixed5 = 0x00;
     const char Fixed6 = 0x00;
-    const uint32_t DataLength = 1999944;
+    const uint32_t MaxDataLength = 1999944;
 } FormatRigolSeries1000z_t;
 
 typedef struct AlgorithmRigolSeries1000z {
