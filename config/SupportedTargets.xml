@@ -5,6 +5,11 @@
             "Settings for DG-1022Z"
         </Settings>
     </Target>
+    <Target brand="Rigol" series="DG1000Z" model="DG-1032Z">
+        <Settings raw_format="yes" csv_format="yes" txt_format="yes">
+            "Settings for DG-1062Z"
+        </Settings>
+    </Target>    
     <Target brand="Rigol" series="DG1000Z" model="DG-1062Z">
         <Settings raw_format="yes" csv_format="yes" txt_format="yes">
             "Settings for DG-1062Z"

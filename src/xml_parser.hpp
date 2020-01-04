@@ -3,6 +3,13 @@
 
 #include <string>
 
+class XmlParser
+{
+    private:
+
+    public:
+}
+
 bool FindAttribute(std::string attribute);
 void ParseSupportedTargets(void);
 #endif // XML_PARSER_HPP
