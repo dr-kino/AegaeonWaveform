@@ -6,14 +6,16 @@ using namespace std;
 
 void Generator::showSupportedGenerators(void)
 {
-    ParseSupportedTargets();
+    XmlParser XmlParserGen;
+    XmlParserGen.ParseSupportedTargets();
 }
 
 bool Generator::compareSupportedGenerators(std::string generator)
 {
     bool generatorIsSupported = true;
+    XmlParser XmlParserGen;
 
-    if ( FindAttribute(generator) == false )
+    if ( XmlParserGen.FindAttribute(generator) == false )
     {
         cout << "Generator not supported" << endl;
         generatorIsSupported = false;

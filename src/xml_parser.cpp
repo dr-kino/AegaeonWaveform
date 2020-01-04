@@ -1,17 +1,8 @@
 #include "xml_parser.hpp"
-#include <stdio.h>
-#include <string>
-#include <iostream>
-#include <libxml/HTMLparser.h>
-#include <libxml/xmlmemory.h>
-#include <libxml/tree.h>
-#include <libxml/parser.h>
-
-#include <libxml/xmlreader.h>
 
 using namespace std;
 
-bool CompareAttribute(xmlNode *a_node, int *calls, std::string myAttribute)
+bool XmlParser::CompareAttribute(xmlNode *a_node, int *calls, std::string myAttribute)
 {
     xmlNode *cur_node = NULL;
     bool isThereAttribute = false;
@@ -49,7 +40,7 @@ bool CompareAttribute(xmlNode *a_node, int *calls, std::string myAttribute)
     return isThereAttribute;
 }
 
-bool FindAttribute(std::string attribute)
+bool XmlParser::FindAttribute(std::string attribute)
 {
     bool isThereAttribute = true;
 
@@ -79,7 +70,7 @@ bool FindAttribute(std::string attribute)
     return isThereAttribute;
 }
 
-void ParseTargetModelAttribute(xmlNode *a_node, int *calls)
+void XmlParser::ParseTargetModelAttribute(xmlNode *a_node, int *calls)
 {
     xmlNode *cur_node = NULL;
 
@@ -109,7 +100,7 @@ void ParseTargetModelAttribute(xmlNode *a_node, int *calls)
     }
 }
 
-void ParseSupportedTargets(void)
+void XmlParser::ParseSupportedTargets(void)
 {
     const char *filename = "../config/SupportedTargets.xml";
 
