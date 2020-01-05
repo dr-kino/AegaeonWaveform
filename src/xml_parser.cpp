@@ -2,6 +2,13 @@
 
 using namespace std;
 
+bool XmlParser::verifySupportedFormat(std::string type)
+{
+    bool formatIsSupported = false;
+
+    return formatIsSupported;
+}
+
 bool XmlParser::CompareAttribute(xmlNode *a_node, int *calls, std::string myAttribute)
 {
     xmlNode *cur_node = NULL;

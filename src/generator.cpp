@@ -4,6 +4,12 @@
 
 using namespace std;
 
+bool Generator::verifySupportedFormat(std::string type)
+{
+    XmlParser XmlParserGen;
+    return XmlParserGen.verifySupportedFormat(type);
+}
+
 void Generator::showSupportedGenerators(void)
 {
     XmlParser XmlParserGen;

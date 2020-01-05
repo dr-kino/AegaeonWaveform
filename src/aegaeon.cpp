@@ -78,7 +78,7 @@ int main(int ac, char *av[])
             ("help", "produce help message")
             ("type", po::value<string>(), "set output type format")
             ("waveform", po::value<string>(), "file name for input waveform")
-            ("fileout", po::value<string>(), "file name for function generator")
+            ("filename", po::value<string>(), "file name for function generator")
             ("generator", po::value<string>(), "set generator model")
             ("list", "list all supported function generator")
         ;
@@ -147,11 +147,11 @@ int main(int ac, char *av[])
             isThereAllArgs = false;
         }
 
-        /* Handler for fileout option */
-        if ( vm.count("fileout"))
+        /* Handler for filename option */
+        if ( vm.count("filename"))
         {
-            // cout << "Output file: " << vm["fileout"].as<string>() << "\n";
-            AegaeonUnit::getInstance().setOutputFileName(vm["fileout"].as<string>());
+            // cout << "Output file: " << vm["filename"].as<string>() << "\n";
+            AegaeonUnit::getInstance().setOutputFileName(vm["filename"].as<string>());
         }
         else
         {
@@ -173,10 +173,16 @@ int main(int ac, char *av[])
         /* Command execution */
         if ( isThereAllArgs == true )
             cout << "Executing operation..." << endl;
-            /* Verify if the target suppots the output file format */
 
+        /* Verify if the target suppots the output file format */
+        if ( AegaeonGenerator.verifySupportedFormat(vm["type"].as<string>()) == true )
+        {
             /* Executes the command */
-
+        }
+        else
+        {
+            cout << "Format not supported" << endl;
+        }
     }
     catch ( exception &e )
     {
