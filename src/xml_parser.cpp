@@ -2,9 +2,36 @@
 
 using namespace std;
 
-bool XmlParser::verifySupportedFormat(std::string type)
+bool XmlParser::FindSupportedFormat(xmlNode *a_node, int *calls, std::string model, std::string type)
+{
+}
+
+bool XmlParser::verifySupportedFormat(std::string model, std::string type)
 {
     bool formatIsSupported = false;
+
+    const char *filename = "../config/SupportedTargets.xml";
+
+    xmlDoc *doc = NULL;
+    xmlNode *root_element = NULL;
+
+    /*parse the file and get the DOM */
+    doc = xmlReadFile(filename, NULL, XML_PARSE_NOBLANKS);
+
+    if ( doc == NULL )
+        printf("error: could not parse file %s\n", filename);
+
+    int calls = 0;
+    /*Get the root element node */
+    root_element = xmlDocGetRootElement(doc);
+
+    if ( FindSupportedFormat(root_element, &calls, model, type) == false )
+        formatIsSupported = false;
+
+    /*free the document */
+    xmlFreeDoc(doc);
+    /*Clean up object */
+    xmlCleanupParser();
 
     return formatIsSupported;
 }

@@ -10,7 +10,7 @@ class Generator {
     size_t listSize;
 
     public:
-    bool verifySupportedFormat(std::string type);
+    bool verifySupportedFormat(std::string model, std::string type);
     void showSupportedGenerators(void);
     bool compareSupportedGenerators(std::string generator);
 };

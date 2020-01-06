@@ -12,8 +12,9 @@ class XmlParser
     Target_t _Target;
     bool CompareAttribute(xmlNode *a_node, int *calls, std::string myAttribute);
     void ParseTargetModelAttribute(xmlNode *a_node, int *calls);
+    bool FindSupportedFormat(xmlNode *a_node, int *calls, std::string model, std::string type);
     public:
-    bool verifySupportedFormat(std::string type);
+    bool verifySupportedFormat(std::string model, std::string type);
     bool FindAttribute(std::string attribute);
     void ParseSupportedTargets(void);
 };

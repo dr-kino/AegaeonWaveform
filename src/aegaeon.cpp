@@ -175,7 +175,7 @@ int main(int ac, char *av[])
             cout << "Executing operation..." << endl;
 
         /* Verify if the target suppots the output file format */
-        if ( AegaeonGenerator.verifySupportedFormat(vm["type"].as<string>()) == true )
+        if ( AegaeonGenerator.verifySupportedFormat(vm["generator"].as<string>(), vm["type"].as<string>()) == true )
         {
             /* Executes the command */
         }
