@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Targets>
     <Target brand="Rigol" series="DG1000Z" model="DG-1022Z">
-        <Settings raw_format="yes" csv_format="yes" txt_format="yes">
+        <Settings raw="yes" csv="yes" txt="yes">
             "Settings for DG-1022Z"
         </Settings>
     </Target>
     <Target brand="Rigol" series="DG1000Z" model="DG-1032Z">
-        <Settings raw_format="yes" csv_format="yes" txt_format="yes">
+        <Settings raw="yes" csv="yes" txt="yes">
             "Settings for DG-1062Z"
         </Settings>
     </Target>    
     <Target brand="Rigol" series="DG1000Z" model="DG-1062Z">
-        <Settings raw_format="yes" csv_format="yes" txt_format="yes">
+        <Settings raw="yes" csv="yes" txt="yes">
             "Settings for DG-1062Z"
         </Settings>
     </Target>

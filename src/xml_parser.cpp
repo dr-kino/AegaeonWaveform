@@ -4,6 +4,64 @@ using namespace std;
 
 bool XmlParser::FindSupportedFormat(xmlNode *a_node, int *calls, std::string model, std::string type)
 {
+    // cout << "Type: " << type << endl;
+    // cout << "Model: " << model << endl;
+
+    xmlNode *cur_node = NULL;
+    bool isThereAttribute = false;
+
+    for ( cur_node = a_node; cur_node; cur_node = cur_node->next )
+    {
+        (*calls)++;
+        if ( xmlStrEqual(xmlCharStrdup("Target"), cur_node->name))
+        {
+            // printf("node type: <%d>, name <%s>, content: <%s> \n", cur_node->children->type, cur_node->children->name, cur_node->children->content);
+            xmlAttr *attribute = cur_node->properties;
+            while ( attribute )
+            {
+                xmlChar *value = xmlNodeListGetString(cur_node->doc, attribute->children, 1);
+                if ( xmlStrEqual(xmlCharStrdup("model"), attribute->name))
+                {
+                    std::string sName(reinterpret_cast<char*>(value));
+                    if ( model.compare(sName) == 0 )
+                    {
+                        cout << "Model Compared: " << sName << endl;
+                        cur_node = cur_node->children;
+                        if ( xmlStrEqual(xmlCharStrdup("Settings"), cur_node->name) )
+                        {
+                            cout << "Settings Founded" << endl;
+                            xmlAttr *attribute2 = cur_node->properties;
+                            while ( attribute2 )
+                            {
+                                xmlChar *value2 = xmlNodeListGetString(cur_node->doc, attribute2->children, 1);
+
+
+                                if ( xmlStrEqual(xmlCharStrdup("csv"), attribute2->name))
+                                {
+                                    cout << "Type Supported: " << value2 << endl;
+                                    return true;
+                                }
+
+                                xmlFree(value2);
+                                attribute2 = attribute2->next;
+                            }
+                        }
+                    }
+                }
+
+                xmlFree(value);
+                attribute = attribute->next;
+            }
+
+            isThereAttribute = FindSupportedFormat(cur_node->children->children, calls, model, type);
+        }
+        else
+        {
+            isThereAttribute = FindSupportedFormat(cur_node->children, calls, model, type);
+        }
+    }
+
+    return isThereAttribute;
 }
 
 bool XmlParser::verifySupportedFormat(std::string model, std::string type)
