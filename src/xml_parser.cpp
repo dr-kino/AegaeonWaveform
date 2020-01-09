@@ -4,9 +4,6 @@ using namespace std;
 
 bool XmlParser::FindSupportedFormat(xmlNode *a_node, int *calls, std::string model, std::string type)
 {
-    // cout << "Type: " << type << endl;
-    // cout << "Model: " << model << endl;
-
     xmlNode *cur_node = NULL;
     bool isThereAttribute = false;
 
@@ -25,22 +22,20 @@ bool XmlParser::FindSupportedFormat(xmlNode *a_node, int *calls, std::string mod
                     std::string sName(reinterpret_cast<char*>(value));
                     if ( model.compare(sName) == 0 )
                     {
-                        cout << "Model Compared: " << sName << endl;
+                        // cout << "Model Compared: " << sName << endl;
                         cur_node = cur_node->children;
                         if ( xmlStrEqual(xmlCharStrdup("Settings"), cur_node->name) )
                         {
-                            cout << "Settings Founded" << endl;
+                            // cout << "Settings Founded" << endl;
                             xmlAttr *attribute2 = cur_node->properties;
                             while ( attribute2 )
                             {
                                 xmlChar *value2 = xmlNodeListGetString(cur_node->doc, attribute2->children, 1);
 
-
-                                if ( xmlStrEqual(xmlCharStrdup("csv"), attribute2->name))
-                                {
-                                    cout << "Type Supported: " << value2 << endl;
-                                    return true;
-                                }
+                                if ( xmlStrEqual(xmlCharStrdup(type.c_str()), attribute2->name))
+                                    if ( xmlStrEqual(xmlCharStrdup("yes"), value2 ) )
+                                        // cout << "Type Supported: " << value2 << endl;
+                                        return true;
 
                                 xmlFree(value2);
                                 attribute2 = attribute2->next;
@@ -83,8 +78,8 @@ bool XmlParser::verifySupportedFormat(std::string model, std::string type)
     /*Get the root element node */
     root_element = xmlDocGetRootElement(doc);
 
-    if ( FindSupportedFormat(root_element, &calls, model, type) == false )
-        formatIsSupported = false;
+    if ( FindSupportedFormat(root_element, &calls, model, type) == true )
+        formatIsSupported = true;
 
     /*free the document */
     xmlFreeDoc(doc);

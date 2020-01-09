@@ -178,10 +178,11 @@ int main(int ac, char *av[])
         if ( AegaeonGenerator.verifySupportedFormat(vm["generator"].as<string>(), vm["type"].as<string>()) == true )
         {
             /* Executes the command */
+            cout << "Format supported" << endl;
         }
         else
         {
-            cout << "Format not supported" << endl;
+            cout << "Format type not supported" << endl;
         }
     }
     catch ( exception &e )
