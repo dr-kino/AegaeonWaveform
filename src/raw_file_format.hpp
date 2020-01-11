@@ -2,6 +2,7 @@
 #define RAW_FILE_FORMAT_HPP
 
 #include "output_file.hpp"
+#include "aegaeon_types.hpp"
 
 class RawFileFormat : public FormatFile {
     public:

@@ -2,8 +2,7 @@
 #define CSV_FILE_FORMAT_HPP
 
 #include "output_file.hpp"
-#include <vector>
-#include <string>
+#include "aegaeon_types.hpp"
 
 class CsvFileFormat : public FormatFile {
     public:

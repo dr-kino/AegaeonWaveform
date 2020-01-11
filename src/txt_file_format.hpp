@@ -2,6 +2,7 @@
 #define TXT_FILE_FORMAT_HPP
 
 #include "output_file.hpp"
+#include "aegaeon_types.hpp"
 
 class TxtFileFormat : public FormatFile {
     public:
