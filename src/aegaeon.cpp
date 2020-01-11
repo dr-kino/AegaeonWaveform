@@ -12,6 +12,7 @@
 #include "aegaeon.hpp"
 #include "generator.hpp"
 #include "xml_parser.hpp"
+#include "output_file_factory.hpp"
 #include <boost/program_options.hpp>
 #include <iostream>
 #include <iterator>
@@ -106,14 +107,17 @@ int main(int ac, char *av[])
             if ( vm["type"].as<string>().compare("csv") == 0 )
             {
                 AegaeonUnit::getInstance().setType(csv);
-            }
-            else if ( vm["type"].as<string>().compare("txt") == 0 )
-            {
-                AegaeonUnit::getInstance().setType(txt);
+                std::unique_ptr<FormatFile>OutputFile = OutputFileFactory::createFile(OutputFileFactory::CSV_TYPE);
             }
             else if ( vm["type"].as<string>().compare("raw") == 0 )
             {
                 AegaeonUnit::getInstance().setType(raw);
+                std::unique_ptr<FormatFile>OutputFile = OutputFileFactory::createFile(OutputFileFactory::RAW_TYPE);
+            }
+            else if ( vm["type"].as<string>().compare("txt") == 0 )
+            {
+                AegaeonUnit::getInstance().setType(txt);
+                std::unique_ptr<FormatFile>OutputFile = OutputFileFactory::createFile(OutputFileFactory::TXT_TYPE);
             }
             else
             {
@@ -178,7 +182,6 @@ int main(int ac, char *av[])
         if ( AegaeonGenerator.verifySupportedFormat(vm["generator"].as<string>(), vm["type"].as<string>()) == true )
         {
             /* Executes the command */
-            cout << "Format supported" << endl;
         }
         else
         {
