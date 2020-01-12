@@ -107,17 +107,14 @@ int main(int ac, char *av[])
             if ( vm["type"].as<string>().compare("csv") == 0 )
             {
                 AegaeonUnit::getInstance().setType(csv);
-                std::unique_ptr<FormatFile>OutputFile = OutputFileFactory::createFile(OutputFileFactory::CSV_TYPE);
             }
             else if ( vm["type"].as<string>().compare("raw") == 0 )
             {
                 AegaeonUnit::getInstance().setType(raw);
-                std::unique_ptr<FormatFile>OutputFile = OutputFileFactory::createFile(OutputFileFactory::RAW_TYPE);
             }
             else if ( vm["type"].as<string>().compare("txt") == 0 )
             {
                 AegaeonUnit::getInstance().setType(txt);
-                std::unique_ptr<FormatFile>OutputFile = OutputFileFactory::createFile(OutputFileFactory::TXT_TYPE);
             }
             else
             {
@@ -181,7 +178,24 @@ int main(int ac, char *av[])
         /* Verify if the target suppots the output file format */
         if ( AegaeonGenerator.verifySupportedFormat(vm["generator"].as<string>(), vm["type"].as<string>()) == true )
         {
+            std::unique_ptr<FormatFile>CsvFile = OutputFileFactory::createFile(OutputFileFactory::CSV_TYPE);
+            std::unique_ptr<FormatFile>RawFile = OutputFileFactory::createFile(OutputFileFactory::RAW_TYPE);
+            std::unique_ptr<FormatFile>TxtFile = OutputFileFactory::createFile(OutputFileFactory::TXT_TYPE);
             /* Executes the command */
+            switch ( AegaeonUnit::getInstance().getType())
+            {
+            case csv:
+                CsvFile->setFileName(vm["filename"].as<string>());
+                break;
+            case raw:
+                RawFile->setFileName(vm["filename"].as<string>());
+                break;
+            case txt:
+                TxtFile->setFileName(vm["filename"].as<string>());
+                break;
+            default:
+                break;
+            }
         }
         else
         {
