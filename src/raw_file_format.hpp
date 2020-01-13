@@ -1,6 +1,7 @@
 #ifndef RAW_FILE_FORMAT_HPP
 #define RAW_FILE_FORMAT_HPP
 
+#include <iostream>
 #include "output_file.hpp"
 #include "aegaeon_types.hpp"
 

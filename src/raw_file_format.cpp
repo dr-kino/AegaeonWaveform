@@ -19,6 +19,7 @@ RawFileFormat::~RawFileFormat()
 // ----------------------------------------------------------------------------
 bool RawFileFormat::readInputData(std::string fileName)
 {
+    std::cout << "Waveform File Name: " << fileName << std::endl;
     return true;
 }
 

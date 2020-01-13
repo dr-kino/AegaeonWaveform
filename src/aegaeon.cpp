@@ -191,7 +191,7 @@ int main(int ac, char *av[])
                 // Set file name
                 RawFile->setFileName(vm["filename"].as<string>());
                 // Read the waveform
-
+                RawFile->readInputData(vm["waveform"].as<string>());
                 // Make the output file
 
                 break;
