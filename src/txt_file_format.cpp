@@ -15,6 +15,14 @@ TxtFileFormat::~TxtFileFormat()
 }
 
 // ----------------------------------------------------------------------------
+// ReadInputData
+// ----------------------------------------------------------------------------
+bool TxtFileFormat::readInputData(std::string fileName)
+{
+    return true;
+}
+
+// ----------------------------------------------------------------------------
 // setFileName
 // ----------------------------------------------------------------------------
 void TxtFileFormat::setFileName(std::string fileNameNew)

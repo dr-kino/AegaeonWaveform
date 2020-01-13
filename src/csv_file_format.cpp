@@ -17,6 +17,14 @@ CsvFileFormat::~CsvFileFormat()
 }
 
 // ----------------------------------------------------------------------------
+// ReadInputData
+// ----------------------------------------------------------------------------
+bool CsvFileFormat::readInputData(std::string fileName)
+{
+    return true;
+}
+
+// ----------------------------------------------------------------------------
 // setFileName
 // ----------------------------------------------------------------------------
 void CsvFileFormat::setFileName(std::string fileNameNew)

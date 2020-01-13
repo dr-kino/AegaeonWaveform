@@ -5,10 +5,14 @@
 #include "aegaeon_types.hpp"
 
 class CsvFileFormat : public FormatFile {
-    public:
+    private:
+    std::vector<uint8_t>_data;
 
+    public:
     CsvFileFormat();
     virtual ~CsvFileFormat();
+
+    bool readInputData(std::string fileName);
 
     const std::string getFileName() const;
     void setFileName(std::string fileNameNew);

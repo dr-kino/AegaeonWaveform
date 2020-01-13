@@ -188,7 +188,12 @@ int main(int ac, char *av[])
                 CsvFile->setFileName(vm["filename"].as<string>());
                 break;
             case raw:
+                // Set file name
                 RawFile->setFileName(vm["filename"].as<string>());
+                // Read the waveform
+
+                // Make the output file
+
                 break;
             case txt:
                 TxtFile->setFileName(vm["filename"].as<string>());

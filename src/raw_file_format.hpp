@@ -5,13 +5,18 @@
 #include "aegaeon_types.hpp"
 
 class RawFileFormat : public FormatFile {
-    public:
+    private:
+    std::vector<uint8_t>_data;
 
+    public:
     RawFileFormat();
     virtual ~RawFileFormat();
 
+    bool readInputData(std::string fileName);
+
     void setFileName(std::string fileNameNew);
     const std::string getFileName() const;
+
     void setData(std::vector<uint8_t>dataNew);
     const std::vector<uint8_t>getData() const;
 };

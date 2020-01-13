@@ -5,10 +5,14 @@
 #include "aegaeon_types.hpp"
 
 class TxtFileFormat : public FormatFile {
-    public:
+    private:
+    std::vector<uint8_t>_data;
 
+    public:
     TxtFileFormat();
     virtual ~TxtFileFormat();
+
+    bool readInputData(std::string fileName);
 
     const std::string getFileName() const;
     void setFileName(std::string fileNameNew);

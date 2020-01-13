@@ -12,6 +12,7 @@ class FormatFile
     {
     }
 
+    virtual bool readInputData(std::string fileName) = 0;
     virtual void setFileName(std::string fileNameNew) = 0;
     virtual const std::string getFileName() const = 0;
     virtual void setData(std::vector<uint8_t>dataNew) = 0;

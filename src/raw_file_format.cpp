@@ -13,6 +13,13 @@ RawFileFormat::RawFileFormat()
 RawFileFormat::~RawFileFormat()
 {
 }
+// ----------------------------------------------------------------------------
+// ReadInputData
+// ----------------------------------------------------------------------------
+bool RawFileFormat::readInputData(std::string fileName)
+{
+    return true;
+}
 
 // ----------------------------------------------------------------------------
 // setFileName
