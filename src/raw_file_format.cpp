@@ -19,8 +19,18 @@ RawFileFormat::~RawFileFormat()
 // ----------------------------------------------------------------------------
 bool RawFileFormat::readInputData(std::string fileName)
 {
+    bool error = false;
+    std::ifstream myFile;
+    std::vector<uint16_t>data;
+
     std::cout << "Waveform File Name: " << fileName << std::endl;
-    return true;
+
+    myFile.open(fileName);
+
+    // myFile.read(&data, sizeof(uint16_t));
+
+
+    return error;
 }
 
 // ----------------------------------------------------------------------------
