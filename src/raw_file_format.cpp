@@ -29,6 +29,7 @@ bool RawFileFormat::readInputData(std::string fileName)
 
     // myFile.read(&data, sizeof(uint16_t));
 
+    myFile.close();
 
     return error;
 }
