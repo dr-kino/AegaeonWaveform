@@ -19,7 +19,7 @@ s_fp = uint16( s );     % Create a 16-bit integer, but let's be specific.
 
 Filename = 'Ramp.rdf';                     % Store in this file
 fid = fopen( Filename, 'w' );              % Open the file for writing    
-fwrite( fid, s_fp, 'uint16', 'ieee-le' );  % Write as 16-bit values, little endian
+fwrite( fid, s_fp, 'uint16', 'ieee-be' );  % Write as 16-bit values, little endian
 fclose( fid );                             % Close file
 
 hold on;
