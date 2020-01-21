@@ -1,4 +1,5 @@
 #include "raw_file_format.hpp"
+using namespace std;
 
 /// ----------------------------------------------------------------------------
 // Constructor
@@ -20,18 +21,16 @@ RawFileFormat::~RawFileFormat()
 bool RawFileFormat::readInputData(std::string fileName)
 {
     bool error = false;
-    std::basic_ifstream<unsigned short>myFile(fileName);
-    unsigned short *data = new unsigned short[8192];
+    ifstream myFile(fileName, std::ios::binary);
+    std::vector<uint16_t>data;
 
-    std::cout << "Waveform File Name: " << fileName << std::endl;
+    cout << "Waveform File Name: " << fileName << endl;
 
-    // myFile.open(fileName);
+    data = std::vector<uint16_t>((std::istreambuf_iterator<char>(myFile)), std::istreambuf_iterator<char>());
 
-    myFile.read(data, 8192);
-
-    for ( int i = 0; i < 8192; i++ )
+    for ( int i = 0; i < 500; i++ )
     {
-        std::cout << data[i] << " ";
+        printf("Value: %u\n", data[i]);
     }
 
     std::cout << std::endl;
