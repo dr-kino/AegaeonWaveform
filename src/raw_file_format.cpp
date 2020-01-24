@@ -22,7 +22,7 @@ bool RawFileFormat::readInputData(std::string fileName)
 {
     bool error = false;
     ifstream myFile(fileName, std::ios::binary);
-    std::vector<uint16_t>data;
+    vector<uint16_t>data;
 
     cout << "Waveform File Name: " << fileName << endl;
 
