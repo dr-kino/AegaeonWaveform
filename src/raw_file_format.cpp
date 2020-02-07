@@ -26,14 +26,15 @@ bool RawFileFormat::readInputData(std::string fileName)
 
     cout << "Waveform File Name: " << fileName << endl;
 
-    data = std::vector<uint16_t>((std::istreambuf_iterator<char>(myFile)), std::istreambuf_iterator<char>());
+    data = std::vector<uint16_t>((istream_iterator<char>(myFile)), istream_iterator<char>());
 
-    for ( int i = 0; i < 500; i++ )
+    for ( int i = 0; i < 8192; i++ )
     {
-        printf("Value: %u\n", data[i]);
+        uint16_t x;
+        // x = data[(i*2)+1];// | (data[(i*2)+1] << 8);
+        // printf("Value: %x\n", x);
+        printf("Valeu: %x\n", data[i]);
     }
-
-    std::cout << std::endl;
 
     myFile.close();
 
