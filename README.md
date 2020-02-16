@@ -54,6 +54,8 @@ g++ -lboost_program_options aegaeon.cpp -o aegaeon
 
 ## Sinc
 
+## Glitch
+
 # Usage
 ```bash
 ./Aegaeon --type txt --waveform teste.csv --filename teste --generator DG-1022Z
